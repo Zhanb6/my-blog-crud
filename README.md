@@ -1,54 +1,68 @@
-# React + TypeScript + Vite
+# my-blog-crud
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Простой одностраничный блог с функционалом CRUD, реализованный на React + TypeScript с использованием Vite и Ant Design.
 
-Currently, two official plugins are available:
+## 📦 Особенности проекта
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **CRUD для блог-постов**: создание, просмотр, редактирование и удаление записей с полями `title` и `text`.
+- **Пагинация**: 10 записей на странице в списке постов.
+- **Просмотр одной записи**: возможность отредактировать и удалить.
+- **Имитация работы с базой**: искусственная задержка 500 мс при запросах и индикатор загрузки.
+- **Уведомления**: оповещения об успешных и неудачных операциях.
+- **FakeApi**: страница с получением и отображением данных из [JSONPlaceholder](https://jsonplaceholder.typicode.com/) с пагинацией.
 
-## Expanding the ESLint configuration
+## 🛠 Технологии
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Роутинг**: React Router
+- **HTTP-запросы**: Axios / Fetch API
+- **UI**: Ant Design
+- **Сборка**: Vite
+- **Язык**: TypeScript
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 🚀 Установка и запуск
+
+1. Клонируйте репозиторий:
+   ```bash
+   git clone https://github.com/YOUR_USERNAME/my-blog-crud.git
+   cd my-blog-crud
+   ```
+2. Установите зависимости:
+   ```bash
+   npm install
+   ```
+3. Запустите dev-сервер:
+   ```bash
+   npm run dev
+   ```
+4. Откройте приложение в браузере по адресу, указанному в консоли (обычно `http://localhost:5173`).
+
+## 📁 Структура проекта
+
+```
+my-blog-crud/
+├─ public/
+│  └─ index.html
+├─ src/
+│  ├─ api/            # слой для запросов (local и external)
+│  ├─ components/     # общие UI-компоненты (Header, Loader, Notification)
+│  ├─ pages/          # страницы приложения (PostsList, PostView, PostCreate, PostEdit, ExternalData)
+│  ├─ types/          # определения TypeScript-интерфейсов
+│  ├─ router.tsx      # маршрутизация
+│  ├─ App.tsx         # корневой компонент
+│  └─ main.tsx        # точка входа
+├─ .gitignore
+├─ package.json
+├─ tsconfig.json
+└─ vite.config.ts
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🤝 Вклад
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+PR и баг-репорты приветствуются! Пожалуйста, оформляйте изменения в отдельной ветке.
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## 📝 Лицензия
+
+Этот проект распространяется под лицензией MIT. Feel free to use and modify.
+
+Вот и готовый проект
+
